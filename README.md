@@ -1,5 +1,5 @@
 # This is a Repo for Joint Flashback Adaptation
-Our codes are built upon the LLama-Factory{https://github.com/hiyouga/LLaMA-Factory/}.
+Our codes are built upon the LLama-Factory(https://github.com/hiyouga/LLaMA-Factory/). We modify their codes for our method.
 
 We modify the origin transformer code for multi-task gradient projection (PCGrad).
 
@@ -26,7 +26,7 @@ The format should the same as example data `data/naturalinstructions_eval.json`
 ### 3. Revise the configuration.
 Revise `config_train_JFA.yaml`. Revise `model_name_or_path, dataset, output_dir` and other parameters.
 
-To train the model, run the following command:
+**To train the model**, run the following command:
 Run `sh run_train.sh`
 
 ## Run Test
@@ -36,4 +36,4 @@ Revise `model_name_or_path, output_dir, eval_dataset`.
 
 Reivse `adapter_name_or_path` to `{your_path}`, `finetuning_type=lora`
 
-Run the command: `sh run_prefict.sh`
+**Run the command**: `sh run_prefict.sh`
