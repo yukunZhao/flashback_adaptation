@@ -1,5 +1,5 @@
 # This is a Repo for Joint Flashback Adaptation
-Our codes are built upon the LLama-Factory(https://github.com/hiyouga/LLaMA-Factory/). We modify their codes for our method.
+Our codes are built upon the [LLama-Factory](https://github.com/hiyouga/LLaMA-Factory/). We modify their codes for our method.
 
 We modify the origin transformer code for multi-task gradient projection (PCGrad).
 
