@@ -31,7 +31,7 @@ Run `sh run_train.sh`
 
 ## Run Test
 Before test, you should:
-### Reivse the `config_predict_{your_task}.yaml`. 
+### 1. Reivse the `config_predict_{your_task}.yaml`. 
 Revise `model_name_or_path, output_dir, eval_dataset`. 
 
 Reivse `adapter_name_or_path` to `{your_path}`, `finetuning_type=lora`
