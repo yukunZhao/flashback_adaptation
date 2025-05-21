@@ -1,0 +1,46 @@
+### model
+model_name_or_path: ../llama3.1-8B-instruct
+
+### method
+stage: dpo
+do_train: true
+finetuning_type: lora
+lora_target: all   #q_proj,v_proj
+pref_beta: 1
+group_nums: 16
+pool_size: 24
+top_k_JL: 2
+pref_loss: sigmoid  # choices: [sigmoid (dpo), orpo, simpo]
+# ref_model : saves/vicuna-13b-only-embeds/full/sft
+# ref_model_quantization_bit: 8
+
+### dataset
+dataset: anchor_sft_encode_fix # anchor_sft_encode_fix #natural_instructions_oritask_SFT_7w, anchor_sft_encode
+template: llama3
+cutoff_len: 2048
+max_samples: 10000000
+overwrite_cache: true
+preprocessing_num_workers: 8
+
+### output
+output_dir: saves/llama3.1-8B-Monitor-Tuning/lora/MT_pcgrad_24pool_topk2
+logging_steps: 10
+save_steps: 50000
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-5
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+### eval
+val_size: 0.02
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 5000
